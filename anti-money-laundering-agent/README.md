@@ -19,6 +19,9 @@ Detecting and preventing money laundering is a mission-critical requirement for 
 
 This project bridges that gap by combining real-time Open Banking data with an intelligent multi-agent system, built using the Model Context Protocol (MCP).
 
+
+Demo - https://www.youtube.com/watch?v=kgmcXldp_-M
+
 **Instant insights**: Real-time transaction retrieval from banks via the Enable Banking API.
 
 **Smarter compliance**: Automated rule-based and AI-assisted analysis flags suspicious activity like high-value transfers, crypto purchases, or transactions with high-risk jurisdictions.
@@ -103,10 +106,6 @@ Tools: fetch_accounts, fetch_transactions, complete_authorization
 Note: I have for now committed my own .pem file and app id so that you can run the project out of box
 as I didn't have time to integrate with a key management service. Ideally this should not be done and these will
 be deactivated after the hackathon.
-
-## Running locally using docker
-
-TBD
 
 ## Running locally
 ```bash
