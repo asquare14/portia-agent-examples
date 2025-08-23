@@ -13,24 +13,52 @@
 
 - **MCP (Model Context Protocol)**: A standardized way for applications to provide context and tools to Large Language Models, enabling AI agents to interact with external systems and data sources.
 
+### Overview
 
-## Overview
+Detecting and preventing money laundering is a mission-critical requirement for financial institutions and fintech platforms, but the process is often slow, manual, and error-prone.
 
-An intelligent AI agent that automates Anti-Money Laundering (AML) compliance by analyzing Open Banking transaction data and generating Suspicious Activity Reports (SARs) for regulatory compliance.
+This project bridges that gap by combining real-time Open Banking data with an intelligent multi-agent system, built using the Model Context Protocol (MCP).
 
-## 🎯 Project Goals
+**Instant insights**: Real-time transaction retrieval from banks via the Enable Banking API.
 
-### Primary Objectives
-- **Automate AML Monitoring**: Continuously analyze transaction patterns for suspicious activity
-- **Regulatory Compliance**: Generate UK-compliant SAR reports for the National Crime Agency (NCA)
-- **Real-time Detection**: Identify money laundering risks as they occur
-- **Reduce Manual Work**: Eliminate the need for manual transaction review
+**Smarter compliance**: Automated rule-based and AI-assisted analysis flags suspicious activity like high-value transfers, crypto purchases, or transactions with high-risk jurisdictions.
 
-### Business Value
-- **Cost Reduction**: Automate expensive manual compliance processes
-- **Risk Mitigation**: Catch suspicious activity faster than manual review
-- **Regulatory Adherence**: Ensure compliance with UK AML regulations
-- **Scalability**: Handle large volumes of transactions efficiently
+**Actionable reports**: Generates ready-to-submit Suspicious Activity Reports (SARs) that comply with AML regulations like UK MLR 2017 and POCA 2002.
+
+This makes the system scalable, plug-and-play, and adaptable for banks, payment processors, and AML compliance teams.
+
+### Creativity and Originality
+
+- **MCP-first architecture**: Created my own open banking MCP for the project. The project integrates MCP servers with AI agents, enabling tool registration and chaining.
+
+- **Open Banking synergy**: Combines bank APIs with compliance automation, something rarely seen in hackathon demos.
+
+- **Multi-agent design**: Transaction Retrieval Agent for secure data fetches, Compliance Agent for AML checks, powered by both deterministic rules and LLM reasoning, SAR Generator Agent for formatted, regulator-ready reports.
+
+- **Future scalability**: Architecture is modular — ready to integrate more agents like periodic monitoring, graph analysis for money flow, or human-in-the-loop audit approvals.
+
+### Learning and Growth
+
+- Gained expertise in Open Banking and the Enable Banking API, including authentication, JWT signing, and secure session handling.
+
+- Learned the MCP protocol and implemented my first evert MCP and integrated it with Portia SDK for smooth tool orchestration.
+
+- Improved prompt engineering and multi-agent coordination for deterministic + LLM hybrid pipelines.
+
+- Learned to debug real-world integration issues, including OAuth flows, sandbox inconsistencies, and MCP stdio communication.
+
+
+## Tech stack:
+
+- **Python** – core logic, rule-checker, JWT authentication
+
+- **Enable Banking API** – Open Banking connectivity
+
+- **MCP (Model Context Protocol)** – structured, interoperable server for agent tools
+
+- **Portia AI SDK** – agent orchestration and chaining
+
+- **LLMs** – SAR generation and advanced compliance reasoning
 
 ## 🏗️ Architecture
 
@@ -55,7 +83,6 @@ Tools: fetch_accounts, fetch_transactions, complete_authorization
 
 ## How you can use it
 
-
 ### Prerequisites
 - Python 3.8+
 - Portia API key
@@ -73,10 +100,15 @@ Tools: fetch_accounts, fetch_transactions, complete_authorization
 6. Create a mock account and mock transactions.
 7. You can use chatgpt to generate mock shady transactions.
 
-## 🐬 Running locally using docker
+Note: I have for now committed my own .pem file and app id so that you can run the project out of box
+as I didn't have time to integrate with a key management service. Ideally this should not be done and these will
+be deactivated after the hackathon.
 
+## Running locally using docker
 
-### Running locally
+TBD
+
+## Running locally
 ```bash
 # Install dependencies
 uv sync
@@ -115,11 +147,7 @@ anti-money-laundering-agent/
 ```bash
 PORTIA_API_KEY=your_portia_key
 OPENAI_API_KEY=your_openai_key
-OPENBANKING_APP_ID=your_enablebanking_app_id
 ```
-
-### Private Key
-Store your `.pem` file securely and reference it in your configuration.
 
 ## 📈 Future Enhancements
 
@@ -127,7 +155,3 @@ Store your `.pem` file securely and reference it in your configuration.
 * **Global Compliance Ready** – Seamlessly adapts to international regulations, from FCA and FinCEN to FATF frameworks, ensuring worry-free scalability.
 * **Plug-and-Play Integration** – Easily connects to any financial platform, core banking system, or payment processor with minimal setup.
 * **Next-Gen Dashboard** – A sleek, interactive interface delivering real-time analytics, risk scoring, and one-click SAR generation.
-
-## 🤝 Contributing
-
-This project follows standard open-source contribution guidelines. Please ensure all code changes maintain security and compliance standards.
